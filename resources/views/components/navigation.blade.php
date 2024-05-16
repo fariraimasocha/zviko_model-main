@@ -30,8 +30,11 @@
                                 {{ __('My Dash') }}
                             </x-nav-link>
 
+                            <x-nav-link href="{{ route('aboutUs.index') }}" :active="request()->routeIs('aboutUs.index')">
+                                {{ __('About Us') }}
+                            </x-nav-link>
 
-                            @role('Teacher')
+{{--                            @role('Teacher')--}}
                             <x-nav-link href="{{ route('dashboard.index') }}" :active="request()->routeIs('dashboard.index')">
                                 {{ __('Dashboard') }}
                             </x-nav-link>
@@ -47,8 +50,7 @@
                             <x-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
                                 {{ __('Users') }}
                             </x-nav-link>
-
-                            @endrole
+{{--                            @endrole--}}
 
 
                             <x-nav-link href="{{ route('link.index') }}" :active="request()->routeIs('link.index')">
@@ -66,14 +68,6 @@
                             <x-nav-link href="{{ route('comment.index') }}" :active="request()->routeIs('comment.index')">
                             {{ __('Comments') }}
                             </x-nav-link>
-                        <form method="POST" action="{{ route('logout') }}" class="mt-3">
-                            @csrf
-
-                            <x-dropdown-link as="a" :href="route('logout')"
-                                onclick="event.preventDefault(); this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </x-dropdown-link>
-                        </form>
 
                     </div>
                 </div>

@@ -14,6 +14,15 @@
                     Nzwisiso
                 </h1>
                 <div class="relative w-full mt-8">
+                    <x-label for="name">
+                        Name
+                    </x-label>
+
+                    <x-input class="w-full px-4 py-4 mt-1 text-sm" type="text" id="name" name="name" error='name'
+                             :value="old('name', '')" placeholder="Zita Rako" />
+
+                </div>
+                <div class="relative w-full mt-8">
                     <x-label for="one">
                         One
                     </x-label>

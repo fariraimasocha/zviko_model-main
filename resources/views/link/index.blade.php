@@ -27,6 +27,7 @@
             @foreach ($tasks as $task)
                 <div class="p-4 border border-gray-300 rounded-lg">
                     <p class="mb-2 text-xl font-bold text-gray-700 leading-none">Test: {{ $task->id }}</p>
+                    <p class="mb-2 text-2xl font-bold text-gray-700 leading-none">Name: {{ $task->name }}</p>
                     <p class="mb-2 text-xl font-semibold text-gray-700 leading-none">Number 1: {{ $task->one }}</p>
                     <p class="mb-2 text-xl font-semibold text-gray-700 leading-none">Number 2: {{ $task->two }}</p>
                     <p class="mb-2 text-xl font-semibold text-gray-700 leading-none">Number 3: {{ $task->three }}</p>
@@ -45,7 +46,7 @@
         <div class="grid justify-center w-9/12 grid-cols-1 gap-4 mx-auto mt-8 md:grid-cols-2 lg:grid-cols-3">
             @foreach ($scores as $song)
                 <div class="p-4 border border-gray-300 rounded-lg">
-                    <p class="mb-2 text-xl font-medium leading-none text-gray-700">Mark: {{ $song->score }}</p>
+                    <p class="mb-2 text-xl font-medium leading-none text-gray-700">Mark: {{ $song->score }} / 5</p>
                 </div>
             @endforeach
         </div>

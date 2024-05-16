@@ -1,4 +1,5 @@
 <div class="min-h-screen bg-gray-100">
+    <x-top-nav />
     <x-navigation />
 
     <!-- Page Heading -->

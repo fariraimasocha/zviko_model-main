@@ -34,6 +34,7 @@ class TaskController extends Controller
         $validated = $request->validated();
 
         Task::create([
+            'name'=> $validated['name'],
             'one' => $validated['one'],
             'two' => $validated['two'],
             'three' => $validated['three'],

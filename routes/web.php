@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LinkController;
@@ -24,9 +25,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['splade'])->group(function () {
+    Route::get('/', fn () => view('home'))->name('home');
     Route::middleware('auth')->group(function () {
-        Route::get('/', fn () => view('home'))->name('home');
-
         Route::resource('/dashboard', DashboardController::class);
         Route::resource('/dash', SdashController::class);
         Route::resource('/task', TaskController::class);
@@ -34,7 +34,7 @@ Route::middleware(['splade'])->group(function () {
         Route::resource('/comment', CommentController::class);
         Route::resource('/score', ScoreController::class);
         Route::resource('/link', LinkController::class);
-
+        Route::resource('aboutUs',AboutController::class);
         Route::resource('users', UsersController::class);
         Route::resource('/roles', RoleController::class);
         Route::resource('/permissions', PermissionController::class);
