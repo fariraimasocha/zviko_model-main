@@ -22,7 +22,16 @@
                             </a>
                         @endauth
 
-                           @role('Teacher')
+                            <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
+                                {{ __('Home') }}
+                            </x-nav-link>
+
+                            <x-nav-link href="{{ route('dash.index') }}" :active="request()->routeIs('dash.index')">
+                                {{ __('My Dash') }}
+                            </x-nav-link>
+
+
+                            @role('Teacher')
                             <x-nav-link href="{{ route('dashboard.index') }}" :active="request()->routeIs('dashboard.index')">
                                 {{ __('Dashboard') }}
                             </x-nav-link>
@@ -41,13 +50,6 @@
 
                             @endrole
 
-                            <x-nav-link href="{{ route('dash.index') }}" :active="request()->routeIs('dash.index')">
-                                {{ __('My Dash') }}
-                            </x-nav-link>
-
-                            <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
-                                {{ __('Home') }}
-                            </x-nav-link>
 
                             <x-nav-link href="{{ route('link.index') }}" :active="request()->routeIs('link.index')">
                                 {{ __('Basa') }}
